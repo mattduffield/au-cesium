@@ -7,21 +7,38 @@
 <body>
   <div id="map"></div>
   <script>
+// var map = new OSMBuildings({
+//   container: 'map',
+//   position: { latitude: 40.7831, longitude: 73.9712 },
+//   zoom: 16,
+//   minZoom: 15,
+//   maxZoom: 20,
+//   tilt: 40,
+//   rotation: 300,
+//   effects: ['shadows'],
+//   attribution: '© Data <a href="https://openstreetmap.org/copyright/">OpenStreetMap</a> © Map <a href="https://mapbox.com/">Mapbox</a> © 3D <a href="https://osmbuildings.org/copyright/">OSM Buildings</a>'
+// });
+
+
+// map.addMapTiles('https://api.mapbox.com/styles/v1/osmbuildings/cjt9gq35s09051fo7urho3m0f/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1Ijoib3NtYnVpbGRpbmdzIiwiYSI6IjNldU0tNDAifQ.c5EU_3V8b87xO24tuWil0w');
+// map.addGeoJSONTiles('https://{s}.data.osmbuildings.org/0.2/dixw8kmb/tile/{z}/{x}/{y}.json');
+
 var map = new OSMBuildings({
   container: 'map',
-  position: { latitude: 40.7831, longitude: 73.9712 },
+  position: { latitude: 52.52111, longitude: 13.41078 }, // TODO: could be user's location
+  tilt: 30,
   zoom: 16,
   minZoom: 15,
   maxZoom: 20,
-  tilt: 40,
-  rotation: 300,
-  effects: ['shadows'],
-  attribution: '© Data <a href="https://openstreetmap.org/copyright/">OpenStreetMap</a> © Map <a href="https://mapbox.com/">Mapbox</a> © 3D <a href="https://osmbuildings.org/copyright/">OSM Buildings</a>'
+  attribution: '© Data <a href="https://openstreetmap.org/copyright/">OpenStreetMap</a> & <a href="https://osmbuildings.org/copyright/">others</a> © Map <a href="https://mapbox.com/">Mapbox</a> © 3D <a href="https://osmbuildings.org/copyright/">OSM Buildings</a>'
 });
 
-
+// map.addMapTiles('https://{s}.tiles.mapbox.com/v3/osmbuildings.kbpalbpk/{z}/{x}/{y}.png');
 map.addMapTiles('https://api.mapbox.com/styles/v1/osmbuildings/cjt9gq35s09051fo7urho3m0f/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1Ijoib3NtYnVpbGRpbmdzIiwiYSI6IjNldU0tNDAifQ.c5EU_3V8b87xO24tuWil0w');
-map.addGeoJSONTiles('https://{s}.data.osmbuildings.org/0.2/dixw8kmb/tile/{z}/{x}/{y}.json');
+
+map.addGeoJSONTiles('https://{s}.data.osmbuildings.org/0.2/ph2apjye/tile/{z}/{x}/{y}.json', { fixedZoom: 15 });
+
+
 
 let rotation = 0;
 
